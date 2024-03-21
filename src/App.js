@@ -49,7 +49,7 @@ const AddInformationForm = () => {
         <div className="col-md-8">
           <div className="card shadow">
             <div className="card-body">
-              <h3 className="card-title text-center mb-4">Add New Book</h3>
+              <h3 className="card-title text-center mb-4">Add a New Book</h3>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="title" className="form-label">Title:</label>
@@ -86,7 +86,7 @@ const AddInformationForm = () => {
       
       <div className="row justify-content-center mt-4">
         <div className="col-md-8">
-          <h3 className="text-center mb-4">List of Books</h3>
+          <h3 className="text-center mb-4">A List of Books</h3>
           <ul className="list-group">
             {filteredBooks.map((book, index) => (
               <li key={index} className="list-group-item d-flex justify-content-between align-items-center shadow">
