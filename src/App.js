@@ -7,7 +7,7 @@ const AddInformationForm = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [books, setBooks] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(''); 
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,12 +44,12 @@ const AddInformationForm = () => {
   );
 
   return (
-    <div className="container-fluid">
-      <div className="row justify-content-center align-items-center">
-        <div className="col-md-6">
-          <div className="card">
+    <div className="container">
+      <div className="row justify-content-center mt-5">
+        <div className="col-md-8">
+          <div className="card shadow">
             <div className="card-body">
-              <h3 className="card-title text-center mb-4">Add a New Book</h3>
+              <h3 className="card-title text-center mb-4">Add New Book</h3>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="title" className="form-label">Title:</label>
@@ -63,7 +63,7 @@ const AddInformationForm = () => {
                   <input type="checkbox" id="favorite" className="form-check-input" checked={favorite} onChange={(e) => setFavorite(e.target.checked)} />
                   <label htmlFor="favorite" className="form-check-label">Favorite</label>
                 </div>
-                <button type="submit" className="btn btn-success">Add a new Book</button>
+                <button type="submit" className="btn btn-success btn-block">Add a new Book</button>
               </form>
               {errorMessage && <p className="text-danger text-center mt-3">{errorMessage}</p>}
               {successMessage && <p className="text-success text-center mt-3">{successMessage}</p>}
@@ -72,8 +72,8 @@ const AddInformationForm = () => {
         </div>
       </div>
       
-      <div className="row justify-content-center align-items-center mt-4">
-        <div className="col-md-6">
+      <div className="row justify-content-center mt-4">
+        <div className="col-md-8">
           <input
             type="text"
             className="form-control"
@@ -84,13 +84,12 @@ const AddInformationForm = () => {
         </div>
       </div>
       
-      {/* Display list of books */}
-      <div className="row justify-content-center align-items-center mt-4">
+      <div className="row justify-content-center mt-4">
         <div className="col-md-8">
-          <h3 className="text-center mb-4">A List of Books</h3>
+          <h3 className="text-center mb-4">List of Books</h3>
           <ul className="list-group">
             {filteredBooks.map((book, index) => (
-              <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
+              <li key={index} className="list-group-item d-flex justify-content-between align-items-center shadow">
                 <div>
                   <strong>Title:</strong> {book.title} | <strong>Author:</strong> {book.author} | <strong>Favorite:</strong> {book.favorite ? 'Yes' : 'No'}
                 </div>
